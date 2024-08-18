@@ -1,0 +1,10 @@
+resources\testUtils\Endpoints.class
+stepDefinitions\settingsPortalSteps.class
+resources\testUtils\GetApiResponseObject.class
+stepDefinitions\CommonStepDefinitions.class
+stepDefinitions\loginApiSteps.class
+stepDefinitions\loginPortalSteps.class
+stepDefinitions\loginVAPTSteps.class
+resources\testUtils\CommonUtils.class
+resources\payload\Login_Payload.class
+cucumber\Options\TestRunner.class
