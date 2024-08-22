@@ -14,8 +14,8 @@ Body:
     "mobileNumber": "9873674841",
     "attributeId": "53788"
 }
-HTTP/1.1 500 
-Date: Thu, 22 Aug 2024 17:59:32 GMT
+HTTP/1.1 200 
+Date: Thu, 22 Aug 2024 23:05:15 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -29,8 +29,10 @@ X-Frame-Options: DENY
 Content-Encoding: gzip
 
 {
-    "timestamp": 1724349572862,
-    "status": 500,
-    "error": "Internal Server Error",
-    "path": "/retailitynew/login/api/auth/request-login-otp"
+    "statusCode": 200,
+    "message": "SUCCESS",
+    "responseData": {
+        "validForInMilliSec": 60000,
+        "token": "zQyc4Fm9idJrixZTVQ7LLJBDgzc2N0ld/Ci9z3/rYENqWcs1HsMeUW//B/ZW8L73"
+    }
 }

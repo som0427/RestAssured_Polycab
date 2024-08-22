@@ -28,12 +28,15 @@ public class CommonStepDefinitions {
         commonUtils.validateStatusCode();
     }
 
+
 //    gherkin: validate ApiResponse execution time
     @Then("validate ApiResponse execution time")
     public void validateApiResponseExecutionTime() {
         commonUtils.validateApiExecutionTime();
     }
 
+
+//    gherkin: validate ApiResponseBody success parameter
     @And("validate {string} is {string} in responseBody")
     public void validateIsInResponseBody(String keyValue, String expValue) {
         Response response = getApiResponseObject.getResponse();

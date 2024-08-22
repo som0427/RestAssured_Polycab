@@ -76,10 +76,20 @@ public class CommonUtils {
     }
 
 
-//    ** method for getToken from Response
+//    ** method for get Token from login APi Response for portal
     public String getTokenFromResponse(Response response) {
         if (response != null) {
             return response.jsonPath().getString("token");
+        }
+        else {
+            throw new NullPointerException("This Response is null");
+        }
+    }
+
+//    ** method for get Token from loginOTP APi Response for mobile App
+    public String getOTPtokenFromResponse(Response response) {
+        if (response != null) {
+            return response.jsonPath().getString("responseData.token");
         }
         else {
             throw new NullPointerException("This Response is null");
@@ -90,7 +100,7 @@ public class CommonUtils {
 //    ** method for validate success in ResponseBody
     public void validateSuccessInResponseBody(String keyCode, String expCode, String responseBody) {
         JsonPath js = new JsonPath(responseBody);
-        assertEquals(String.valueOf(keyCode), js.getString(expCode));
+        assertEquals(js.getString(keyCode), expCode);
     }
 
 

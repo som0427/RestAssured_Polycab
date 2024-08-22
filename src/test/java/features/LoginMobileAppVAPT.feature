@@ -8,5 +8,6 @@ Feature: Implement OTP Functionality with Security Measures for mobile app login
   Scenario: Controlled OTP Resend Interval
 
     Given user submit "request_login_otp" with "POST" request for Applogin
+    Then validate response token validity time limit and generated token
     And validate "statusCode" is "200" in responseBody
     And validate "message" is "SUCCESS" in responseBody

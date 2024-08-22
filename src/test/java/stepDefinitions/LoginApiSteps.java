@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -53,4 +54,5 @@ public class LoginApiSteps extends CommonUtils {
 
         getApiResponseObject.setResponse(response);
     }
+
 }
