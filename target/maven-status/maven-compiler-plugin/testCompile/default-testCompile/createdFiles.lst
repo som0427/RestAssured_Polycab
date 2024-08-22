@@ -1,10 +1,11 @@
+stepDefinitions\LoginPortalSteps.class
 resources\testUtils\Endpoints.class
-stepDefinitions\settingsPortalSteps.class
+stepDefinitions\LoginMobileAppVAPT.class
 resources\testUtils\GetApiResponseObject.class
+stepDefinitions\SettingsPortalSteps.class
 stepDefinitions\CommonStepDefinitions.class
-stepDefinitions\loginApiSteps.class
-stepDefinitions\loginPortalSteps.class
-stepDefinitions\loginVAPTSteps.class
+stepDefinitions\LoginPortalVAPTSteps.class
 resources\testUtils\CommonUtils.class
+stepDefinitions\LoginApiSteps.class
 resources\payload\Login_Payload.class
 cucumber\Options\TestRunner.class

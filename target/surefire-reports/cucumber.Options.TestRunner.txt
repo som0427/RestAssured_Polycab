@@ -1,4 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: cucumber.Options.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.748 s -- in cucumber.Options.TestRunner
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 62.87 s <<< FAILURE! -- in cucumber.Options.TestRunner
+Implement OTP Functionality with Security Measures for mobile app login. Validate rate limiting, anti-automation checks,.Controlled OTP Resend Interval -- Time elapsed: 62.35 s <<< FAILURE!
+java.lang.AssertionError: expected:<null> but was:<200>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at resources.testUtils.CommonUtils.validateSuccessInResponseBody(CommonUtils.java:93)
+	at stepDefinitions.CommonStepDefinitions.validateIsInResponseBody(CommonStepDefinitions.java:40)
+	at ✽.validate "statusCode" is "200" in responseBody(file:///C:/Users/Soumya/Documents/GitHub/Git%20local%20API/RestAssured_Polycab/RestAssured_Polycab/src/test/java/features/LoginMobileAppVAPT.feature:11)
+

@@ -8,23 +8,25 @@ import resources.payload.Login_Payload;
 import resources.testUtils.CommonUtils;
 import resources.testUtils.Endpoints;
 import resources.testUtils.GetApiResponseObject;
+import utilities.GetProperty;
 
 import java.io.FileNotFoundException;
 import static io.restassured.RestAssured.given;
-public class loginApiSteps extends CommonUtils {
+public class LoginApiSteps extends CommonUtils {
 
     RequestSpecification reqspec;
     ResponseSpecification respec;
-    Login_Payload payload = new Login_Payload();
     static Response response;
+    Endpoints ep;
     private final GetApiResponseObject getApiResponseObject;
+    Login_Payload payload = new Login_Payload();
 
     //This will ensure single CommonUtils instance will be created throughout the execution.
     //Calling getInstance() ensures you are interacting with that single shared instance.
     //This is particularly useful if CommonUtils maintains state that should be consistent across different parts of your application.i.e. Logging.txt
     private final CommonUtils commonUtils = CommonUtils.getInstance();
 
-    public loginApiSteps() {
+    public LoginApiSteps() {
         this.getApiResponseObject = GetApiResponseObject.getInstance();
     }
 
@@ -33,9 +35,21 @@ public class loginApiSteps extends CommonUtils {
 
         reqspec = given().spec(commonUtils.requestSpec()).body(payload.loginPayload());
         respec = responseSpec();
-        Endpoints ep = Endpoints.valueOf(endpoint);
+        ep = Endpoints.valueOf(endpoint);
 
         response = reqspec.when().post(ep.getValOfEndpoint()).then().spec(respec).extract().response();
+
+        getApiResponseObject.setResponse(response);
+    }
+
+    @When("user submit {string} with {string} request for Applogin")
+    public void userSubmitWithRequestForApplogin(String endpoint, String POST) throws FileNotFoundException {
+        reqspec = given().spec(commonUtils.requestSpec()).body(payload.loginMobilegetOTPPayload());
+        respec = responseSpec();
+        ep = Endpoints.valueOf(endpoint);
+
+        response = reqspec.when().queryParam("projectId", GetProperty.value("projectId")).post(ep.getValOfEndpoint())
+                .then().extract().response();
 
         getApiResponseObject.setResponse(response);
     }

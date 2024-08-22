@@ -19,7 +19,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class loginPortalSteps extends CommonUtils {
+public class LoginPortalSteps extends CommonUtils {
 
     RequestSpecification reqspec;
     ResponseSpecification respec;
@@ -30,7 +30,7 @@ public class loginPortalSteps extends CommonUtils {
     int noOfAssignedProjects;
     private final GetApiResponseObject getApiResponseObject;
 
-    public loginPortalSteps() {
+    public LoginPortalSteps() {
         this.getApiResponseObject = GetApiResponseObject.getInstance();
     }
 

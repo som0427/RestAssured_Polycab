@@ -39,6 +39,7 @@ public class CommonUtils {
         this.getApiResponseObject = GetApiResponseObject.getInstance();
     }
 
+
     public RequestSpecification requestSpec() throws FileNotFoundException {
         if (commonRequest == null) {
             logStream = new PrintStream(new FileOutputStream("logging.txt"));
@@ -51,17 +52,22 @@ public class CommonUtils {
         return commonRequest;
     }
 
+
     public ResponseSpecification responseSpec() {
         commonResponse = new ResponseSpecBuilder().expectStatusCode(200)
                 .expectResponseTime(lessThan(5000L)).expectContentType(ContentType.JSON).build();
         return commonResponse;
     }
 
+
+//    ** method for StatusCode
     public void validateStatusCode() {
         response = getApiResponseObject.getResponse();
         assertEquals(200, response.statusCode());
     }
 
+
+//    ** method for ApiExecutionTime
     public void validateApiExecutionTime() {
         response = getApiResponseObject.getResponse();
         long response_time = response.time();
@@ -69,6 +75,8 @@ public class CommonUtils {
         System.out.println("API Response Time: " + response_time + " ms" + "-----------------responseTime------------------");
     }
 
+
+//    ** method for getToken from Response
     public String getTokenFromResponse(Response response) {
         if (response != null) {
             return response.jsonPath().getString("token");
@@ -77,6 +85,14 @@ public class CommonUtils {
             throw new NullPointerException("This Response is null");
         }
     }
+
+
+//    ** method for validate success in ResponseBody
+    public void validateSuccessInResponseBody(String keyCode, String expCode, String responseBody) {
+        JsonPath js = new JsonPath(responseBody);
+        assertEquals(String.valueOf(keyCode), js.getString(expCode));
+    }
+
 
     public <T> T getJsonPath(String response, String key) {
         JsonPath js = new JsonPath(response);

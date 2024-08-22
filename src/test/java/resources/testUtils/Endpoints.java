@@ -6,6 +6,8 @@ public enum Endpoints {
 //  login endpoints #
     loginAPI("/retailitynew/login/api/auth/login"),
     requestOTP("/retailitynew/login/api/auth/requestOTP"),
+    request_login_otp("/retailitynew/login/api/auth/request-login-otp"),
+    verify_otp("/retailitynew/login/api/auth/verify-otp"),
     createFirebaseToken("/retailitynew/mobile/api/users/createFirebaseToken"),
     logoutApi("/retailitynew/login/api/logout"),
 

@@ -15,7 +15,7 @@ import java.io.FileNotFoundException;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class loginVAPTSteps extends CommonUtils {
+public class LoginPortalVAPTSteps extends CommonUtils {
 
     RequestSpecification reqspec;
     ResponseSpecification respec;
@@ -24,7 +24,7 @@ public class loginVAPTSteps extends CommonUtils {
     String bearerToken;
     private final GetApiResponseObject getApiResponseObject;
     private final CommonUtils commonUtils = CommonUtils.getInstance();
-    public loginVAPTSteps() {
+    public LoginPortalVAPTSteps() {
         this.getApiResponseObject = GetApiResponseObject.getInstance();
         CommonUtils.getInstance();
     }
