@@ -12,11 +12,12 @@ public enum Endpoints {
     logoutApi("/retailitynew/login/api/logout"),
 
 
-//  settings enpoints #
+//  settings endpoints #
     assistant("retailitynew/setting/api/configuration/assistant"),
     getFieldsInSetting("retailitynew/setting/api/customType/getFieldsInSetting"),
     getAllAttributeTypes("retailitynew/setting/api/customType/getAllAttributeTypes"),
     getFieldVisibilitySettings("retailitynew/setting/api/fields/getFieldVisibilitySettings");
+
 
     private final String endpoint;
 
@@ -27,4 +28,4 @@ public enum Endpoints {
     public String getValOfEndpoint() {
         return endpoint;
     }
-}
+    }

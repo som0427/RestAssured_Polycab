@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/java/features",
+        features = {"src/test/java/features/Mobile_App", "src/test/java/features/Portal"},
         glue = {"stepDefinitions"},
-        tags = "@loginMobileAppVAPTsc1",
+        tags = "@login",
         dryRun = false,
         plugin = {"pretty", "rerun:target/rerun.txt", "timeline:target/timeline",
                 "html:target/htmlReports/cucumber-reports", "json:target/jsonReports/cucumber-reports.json"},

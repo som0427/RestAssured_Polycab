@@ -1,5 +1,5 @@
-#@login
-#@loginPortalVAPT B2B-2277
+@login
+@loginPortalVAPT B2B-2277
 Feature: Validate login functionality VAPT testing for portal. Check Secure Session Management and Authentication Mechanisms
 
 

@@ -1,4 +1,4 @@
-package stepDefinitions;
+package stepDefinitions.Portal;
 
 import io.cucumber.java.en.*;
 import io.restassured.path.json.JsonPath;
@@ -12,14 +12,12 @@ import resources.testUtils.CommonUtils;
 import resources.testUtils.Endpoints;
 import resources.testUtils.GetApiResponseObject;
 import utilities.GetProperty;
-
-import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class LoginPortalSteps extends CommonUtils {
+public class PortalLoginSteps extends CommonUtils {
 
     RequestSpecification reqspec;
     ResponseSpecification respec;
@@ -30,34 +28,33 @@ public class LoginPortalSteps extends CommonUtils {
     int noOfAssignedProjects;
     private final GetApiResponseObject getApiResponseObject;
 
-    public LoginPortalSteps() {
+    public PortalLoginSteps() {
         this.getApiResponseObject = GetApiResponseObject.getInstance();
     }
 
     //1st Scenario
-    @Given("add loginAPI payload")
-    public void addLoginAPIPayload() throws FileNotFoundException {
-        reqspec = given().spec(requestSpec()).body(payload.loginPayload());
+    @Given("add loginAPI payload with {string} and {string}")
+    public void addLoginAPIPayloadWithAnd(String username, String password) {
+        username = GetProperty.value("login_username");
+        password = GetProperty.value("login_password");
+        String login_Payload = String.format("{ \"username\": \"%s\", \"password\": \"%s\" }", username, password);
+        reqspec = given().spec(requestSpec()).body(login_Payload);
         respec = responseSpec();
     }
 
     @When("user submit {string} with {string} request for loginPortal")
     public void userSubmitWithPOSTRequestForLoginPortal(String endpoint, String httpMethod) {
         Endpoints ep = Endpoints.valueOf(endpoint);
-        if (httpMethod.equalsIgnoreCase("POST")) {
-            response = reqspec.when().post(ep.getValOfEndpoint()).then().spec(respec).extract().response();
-        }
-        else if (httpMethod.equalsIgnoreCase("GET")) {
-            response = reqspec.when().get(ep.getValOfEndpoint()).then().spec(respec).extract().response();
-        }
+        response = reqspec.when().post(ep.getValOfEndpoint()).then().spec(respec).extract().response();
+        loginResponse = response.asString();
+
         getApiResponseObject.setResponse(response);
     }
 
-    @Then("validate {string} is generated")
-    public void validateIsGenerated(String token) {
-        json = new JsonPath(response.asString());
-        String fetchToken = json.get(token);
-        System.out.println("token is: " + fetchToken + "-----------------token-------------------");
+    @Then("validate token is generated")
+    public void validateTokenIsGenerated() {
+        String bearerToken = getTokenFromResponse(response);
+        System.out.println("token is: " + bearerToken + "-----------------token-------------------");
     }
 
     @Then("{string} is validated")
@@ -66,25 +63,22 @@ public class LoginPortalSteps extends CommonUtils {
         System.out.println(loginResponse + "-------------------------response-----------");
         json = new JsonPath(loginResponse);
         int projectId = json.getInt("user.userProject[0].project.projectId");
-        System.out.println("projectId is: " + projectId + "---------------projectId----------------3");
-        Assert.assertEquals(GetProperty.value("respProjectId"), String.valueOf(projectId));
+        Assert.assertEquals(project_id, String.valueOf(projectId));
     }
 
-    @Then("validate count of assigned projects and display project name")
-    public void validateCountOfAssignedProjectsAndDisplayProjectName() {
-        loginResponse = response.asString();
+    @Then("validate count of assigned projects and display {string}")
+    public void validateCountOfAssignedProjectsAndDisplay(String project_name) {
         json = new JsonPath(loginResponse);
         //projectCount
         noOfAssignedProjects = json.getInt("user.userProject.size()");
-        Assert.assertEquals(GetProperty.value("projectCount"), String.valueOf(noOfAssignedProjects));
-        System.out.println("projectCount is: " + noOfAssignedProjects + "---------------projectCount----------------");
+        Assert.assertEquals("1", String.valueOf(noOfAssignedProjects));
         //projectName
         for (int i = 0; i < noOfAssignedProjects; i++) {
             String projectName = json.getString("user.userProject[" + i + "].project.projectName");
             System.out.println("projectName " + i + ": " + projectName + "---------------projectName----------------");
 
-            if (noOfAssignedProjects > 1) {
-                Assert.assertEquals(GetProperty.value("projectName"), json.getString("user.userProject[0].project.projectName"));
+            if (noOfAssignedProjects > 0) {
+                Assert.assertEquals(project_name, json.getString("user.userProject[0].project.projectName"));
                 System.out.println("project logo img " + i + ":" + (json.get("user.userProject[" + i + "].project.projectLogoImage")) + " ---------------logo----------------");
             }
         }
@@ -98,7 +92,7 @@ public class LoginPortalSteps extends CommonUtils {
         String accessToken = json.get(token);
         noOfAssignedProjects = json.getInt("user.userProject.size()");
 
-        if (noOfAssignedProjects > 1) {
+        if (noOfAssignedProjects > 0) {
             assignedWebMenus = reqspec.when().header("Authorization", "Bearer " + accessToken).queryParam("projectId", project_id)
                     .get("/retailitynew/login/api/menu/assignedWebMenus").then().spec(respec).extract().response();
         }
@@ -154,4 +148,5 @@ public class LoginPortalSteps extends CommonUtils {
 
         }
     }
+
 }

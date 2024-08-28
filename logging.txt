@@ -1,8 +1,8 @@
 Request method:	POST
-Request URI:	https://endpoints-backend.api.ap.assistive.site/retailitynew/login/api/auth/request-login-otp?projectId=355
+Request URI:	https://endpoints-backend.api.ap.assistive.site/retailitynew/login/api/auth/login
 Proxy:			<none>
 Request params:	<none>
-Query params:	projectId=355
+Query params:	<none>
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=*/*
@@ -11,11 +11,154 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "mobileNumber": "9873674841",
-    "attributeId": "53788"
+    "username": "polycab@getassistive.com",
+    "password": "channelplay"
 }
 HTTP/1.1 200 
-Date: Thu, 22 Aug 2024 23:05:15 GMT
+Date: Wed, 28 Aug 2024 07:23:18 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Encoding: gzip
+
+{
+    "user": {
+        "userId": 3771,
+        "userCode": 1003533,
+        "firstName": "Polycab",
+        "middleName": null,
+        "lastName": "Admin",
+        "userName": "polycab@getassistive.com",
+        "passwordRequest method:	POST
+Request URI:	https://endpoints-backend.api.ap.assistive.site/retailitynew/login/api/auth/login
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "username": "polycab@getassistive.com",
+    "password": "channelplay"
+}
+HTTP/1.1 200 
+Date: Wed, 28 Aug 2024 07:23:19 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Encoding: gzip
+
+{
+    "user": {
+        "userId": 3771,
+        "userCode": 1003533,
+        "firstName": "Polycab",
+        "middleName": null,
+        "lastName": "Admin",
+        "userName": "polycab@getassistive.com",
+        "password": "7242b2af69845834b9e9a2aef6bceb86",
+        "communicationEmail": "polycab.email@gmail.com",
+        "personalEmail": "polycab@getassistive.com",
+        "mobile": "8541913685",
+        "active": 1,
+        "userType": 3,
+        "defaultProjectId": 355,
+        "resetPasswordToken": null,
+        "profilePictureName": null,
+        "userProject": [
+            {
+                "id": 3841,
+                "active": 1,
+                "nodeKey": "0-3771",
+                "serialNo": null,
+                "assignedOn": 1704326400000,
+                "project": {
+                    "projectId": 355,
+                    "projectName": "Polycab Red Carpet",
+                    "projectLogoImage": "https://static.assistive.site/ap-south-1-data/355/others/2024/06/IMG_355_1718170013342_OTHERS_2024-06-12T05:26:53.342459361.png",
+                    "cmProjectType": 3,
+                    "timezone": {
+                        "id": 1,
+                        "timeZoneName": "(UTC+5:30) Indian Standard Time",
+                        "active": 1
+                    },
+                    "language": {
+                        "id": 1,
+                        "languageName": "English",
+                        "active": 1
+                    },
+                    "country": {
+                        "countryId": 1,
+                        "countryCode": "IND",
+                        "callingCode": "+91",
+                        "countryName": "India",
+                        "projectId": 67
+                    },
+                    "active": 1,
+                    "logicalName": "sys_gmail_25",
+                    "selectCarouselFlag": 1,
+                    "carouselList": null,
+                    "updatedBy": null,
+                    "createdDate": null,
+                    "allowedDaysForPointHistory": null,
+                    "otpSmsUrl": "https://api2.growwsaas.com/fe/api/v1/multiSend?username=cpgrohe.trans&password=OKZZf&unicode=false&from=PLYCAB",
+                    "otpMessage": "Dear Partner,Your OTP code is <<smsotpforuser>>. Thanks & Regards, Team Polycab Red Carpet",
+                    "sendOtpFromWhatsapp": false,
+                    "whatsappOtpUrl": null,
+                    "whatsappOtpRequest": null,
+                    "whatsappOtpUrlHeader": null,
+                    "pointsExpireInDays": null,
+                    "sendPointTransactionEmail": 0,
+                    "isSmsEnabled": 1,
+                    "otpValidityDuration": 60,
+                    "resendOtpInterval": 12,
+                    "maxSendOtpRequest": 2,
+                    "otpCountResetAfter": 120,
+                    "maxFailureAttempt": 5,
+                    "failureAttemptResetAfter": 180
+                },
+                "updatedTimestamp": 1704357329000
+            }
+        ]
+    },
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb2x5Y2FiQGdldGFzc2lzdGl2ZS5jb20iLCJhdWQiOiJhc3Npc3RpdmVfYXAiLCJzY29wZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifV0sInVzZXJJZCI6IjM3NzEiLCJ1c2VySXAiOiI0NS4yNTAuNDkuMTUwIiwidXNlckJyb3dzZXIiOiJBcGFjaGUtSHR0cENsaWVudC80LjUuMTMgKEphdmEvMTcuMC42KSIsInJlZ2lvbkNvZGUiOiJhcC1zb3V0aC0xIiwic2Vzc2lvbklkIjoiMDAwMDAxOTEtOTdkZS0xMzVhLTAwMDAtMDAwMDAwMDAwZWJiIiwibW9kdWxlVHlwZSI6MCwiZW50aXR5UmVjb3JkSWQiOjAsImlzcyI6InN5c3RlbSIsImlhdCI6MTcyNDgyOTc5OSwiZXhwIjoxNzI0ODQ3Nzk5fQ.2KKvfd5Lmqea6fWEplT3I8B0hF1_Y487ApQMCS0_udk",
+    "serverTimezone": "GMT",
+    "appServerUrl": "https://endpoints-backend.api.ap.assistive.site/retailitynew",
+    "userSessionId": "YhM12YDfo0y5ur2tuup9Qg=="
+}
+Request method:	GET
+Request URI:	https://endpoints-backend.api.ap.assistive.site/retailitynew/setting/api/configuration/assistant?projectId=355
+Proxy:			<none>
+Request params:	<none>
+Query params:	projectId=355
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb2x5Y2FiQGdldGFzc2lzdGl2ZS5jb20iLCJhdWQiOiJhc3Npc3RpdmVfYXAiLCJzY29wZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifV0sInVzZXJJZCI6IjM3NzEiLCJ1c2VySXAiOiI0NS4yNTAuNDkuMTUwIiwidXNlckJyb3dzZXIiOiJBcGFjaGUtSHR0cENsaWVudC80LjUuMTMgKEphdmEvMTcuMC42KSIsInJlZ2lvbkNvZGUiOiJhcC1zb3V0aC0xIiwic2Vzc2lvbklkIjoiMDAwMDAxOTEtOTdkZS0xMzVhLTAwMDAtMDAwMDAwMDAwZWJiIiwibW9kdWxlVHlwZSI6MCwiZW50aXR5UmVjb3JkSWQiOjAsImlzcyI6InN5c3RlbSIsImlhdCI6MTcyNDgyOTc5OSwiZXhwIjoxNzI0ODQ3Nzk5fQ.2KKvfd5Lmqea6fWEplT3I8B0hF1_Y487ApQMCS0_udk
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Date: Wed, 28 Aug 2024 07:23:19 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -31,8 +174,1039 @@ Content-Encoding: gzip
 {
     "statusCode": 200,
     "message": "SUCCESS",
-    "responseData": {
-        "validForInMilliSec": 60000,
-        "token": "zQyc4Fm9idJrixZTVQ7LLJBDgzc2N0ld/Ci9z3/rYENqWcs1HsMeUW//B/ZW8L73"
-    }
+    "responseData": [
+        {
+            "menuId": 614,
+            "menuName": "Users",
+            "menuDescription": "Manage User Roles & Users",
+            "menuIcon": "fa-user-cog",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "User Roles",
+                    "menuDescription": "Manage access roles for your users",
+                    "menuIcon": null,
+                    "urlPath": "user-role/set-assist",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Add & Manage Users",
+                    "menuDescription": "Manage your team",
+                    "menuIcon": null,
+                    "urlPath": "users/set-assist",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 615,
+            "menuName": "Customers",
+            "menuDescription": "Customize fields & settings",
+            "menuIcon": "fa-building",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Customer Fields",
+                    "menuDescription": "Manage data fields",
+                    "menuIcon": null,
+                    "urlPath": "customer-settings/",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Customer Settings",
+                    "menuDescription": "General settings for organizations",
+                    "menuIcon": null,
+                    "urlPath": "general-settings/1",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 616,
+            "menuName": "Contacts",
+            "menuDescription": "Customize fields & settings",
+            "menuIcon": "fa-address-book",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Contact Fields",
+                    "menuDescription": "Manage data fields",
+                    "menuIcon": null,
+                    "urlPath": "contact-settings",
+                    "greenTick": false,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Contact Settings",
+                    "menuDescription": "General settings for contacts",
+                    "menuIcon": null,
+                    "urlPath": "general-settings/3",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 617,
+            "menuName": "Opportunities",
+            "menuDescription": "Customize fields & settings",
+            "menuIcon": "fa-money-check",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Opportunity Fields",
+                    "menuDescription": "Manage data fields",
+                    "menuIcon": null,
+                    "urlPath": "opportunity-settings",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Opportunity Settings",
+                    "menuDescription": "General settings for opportunities",
+                    "menuIcon": null,
+                    "urlPath": "general-settings/2",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 618,
+            "menuName": "Products",
+            "menuDescription": "Customize fields & settings",
+            "menuIcon": "fa-box-open",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Product Fields",
+                    "menuDescription": "Manage data fields",
+                    "menuIcon": null,
+                    "urlPath": "product-settings/set-assist/0",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Product Settings",
+                    "menuDescription": "General settings for products",
+                    "menuIcon": null,
+                    "urlPath": "product-settings/set-assist/1",
+                    "greenTick": false,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 643,
+            "menuName": "Account Setup",
+            "menuDescription": "Configure how Assistive works for you",
+            "menuIcon": "fa-cogs",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Localization",
+                    "menuDescription": "Country, timezone, currency etc.",
+                    "menuIcon": null,
+                    "urlPath": "general-settings/set-assist",
+                    "greenTick": false,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        }
+    ]
+}
+Request method:	POST
+Request URI:	https://endpoints-backend.api.ap.assistive.site/retailitynew/login/api/logout?projectId=355
+Proxy:			<none>
+Request params:	<none>
+Query params:	projectId=355
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb2x5Y2FiQGdldGFzc2lzdGl2ZS5jb20iLCJhdWQiOiJhc3Npc3RpdmVfYXAiLCJzY29wZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifV0sInVzZXJJZCI6IjM3NzEiLCJ1c2VySXAiOiI0NS4yNTAuNDkuMTUwIiwidXNlckJyb3dzZXIiOiJBcGFjaGUtSHR0cENsaWVudC80LjUuMTMgKEphdmEvMTcuMC42KSIsInJlZ2lvbkNvZGUiOiJhcC1zb3V0aC0xIiwic2Vzc2lvbklkIjoiMDAwMDAxOTEtOTdkZS0xMzVhLTAwMDAtMDAwMDAwMDAwZWJiIiwibW9kdWxlVHlwZSI6MCwiZW50aXR5UmVjb3JkSWQiOjAsImlzcyI6InN5c3RlbSIsImlhdCI6MTcyNDgyOTc5OSwiZXhwIjoxNzI0ODQ3Nzk5fQ.2KKvfd5Lmqea6fWEplT3I8B0hF1_Y487ApQMCS0_udk
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Date: Wed, 28 Aug 2024 07:23:19 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Encoding: gzip
+
+{
+    "statusCode": 200,
+    "message": "SUCCESS",
+    "responseData": "You have successfully logged out!"
+}
+Request method:	POST
+Request URI:	https://endpoints-backend.api.ap.assistive.site/retailitynew/login/api/logout?projectId=355
+Proxy:			<none>
+Request params:	<none>
+Query params:	projectId=355
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb2x5Y2FiQGdldGFzc2lzdGl2ZS5jb20iLCJhdWQiOiJhc3Npc3RpdmVfYXAiLCJzY29wZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifV0sInVzZXJJZCI6IjM3NzEiLCJ1c2VySXAiOiI0NS4yNTAuNDkuMTUwIiwidXNlckJyb3dzZXIiOiJBcGFjaGUtSHR0cENsaWVudC80LjUuMTMgKEphdmEvMTcuMC42KSIsInJlZ2lvbkNvZGUiOiJhcC1zb3V0aC0xIiwic2Vzc2lvbklkIjoiMDAwMDAxOTEtOTdkZS0xMzVhLTAwMDAtMDAwMDAwMDAwZWJiIiwibW9kdWxlVHlwZSI6MCwiZW50aXR5UmVjb3JkSWQiOjAsImlzcyI6InN5c3RlbSIsImlhdCI6MTcyNDgyOTc5OSwiZXhwIjoxNzI0ODQ3Nzk5fQ.2KKvfd5Lmqea6fWEplT3I8B0hF1_Y487ApQMCS0_udk
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 
+Date: Wed, 28 Aug 2024 07:23:20 GMT
+Content-Type: application/json
+Content-Length: 98
+Connection: keep-alive
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+
+{
+    "message": "Token has expired",
+    "type": "Unauthorized",
+    "statusCode": 401,
+    "responseData": null
+}
+Request method:	GET
+Request URI:	https://endpoints-backend.api.ap.assistive.site/retailitynew/setting/api/configuration/assistant?projectId=355
+Proxy:			<none>
+Request params:	<none>
+Query params:	projectId=355
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb2x5Y2FiQGdldGFzc2lzdGl2ZS5jb20iLCJhdWQiOiJhc3Npc3RpdmVfYXAiLCJzY29wZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifV0sInVzZXJJZCI6IjM3NzEiLCJ1c2VySXAiOiI0NS4yNTAuNDkuMTUwIiwidXNlckJyb3dzZXIiOiJBcGFjaGUtSHR0cENsaWVudC80LjUuMTMgKEphdmEvMTcuMC42KSIsInJlZ2lvbkNvZGUiOiJhcC1zb3V0aC0xIiwic2Vzc2lvbklkIjoiMDAwMDAxOTEtOTdkZS0xMzVhLTAwMDAtMDAwMDAwMDAwZWJiIiwibW9kdWxlVHlwZSI6MCwiZW50aXR5UmVjb3JkSWQiOjAsImlzcyI6InN5c3RlbSIsImlhdCI6MTcyNDgyOTc5OSwiZXhwIjoxNzI0ODQ3Nzk5fQ.2KKvfd5Lmqea6fWEplT3I8B0hF1_Y487ApQMCS0_udk
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 
+Date: Wed, 28 Aug 2024 07:23:20 GMT
+Content-Type: application/json
+Content-Length: 98
+Connection: keep-alive
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+
+{
+    "message": "Token has expired",
+    "type": "Unauthorized",
+    "statusCode": 401,
+    "responseData": null
+}
+Request method:	POST
+Request URI:	https://endpoints-backend.api.ap.assistive.site/retailitynew/login/api/auth/login
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "username": "polycab@getassistive.com",
+    "password": "channelplay"
+}
+HTTP/1.1 200 
+Date: Wed, 28 Aug 2024 07:23:20 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Encoding: gzip
+
+{
+    "user": {
+        "userId": 3771,
+        "userCode": 1003533,
+        "firstName": "Polycab",
+        "middleName": null,
+        "lastName": "Admin",
+        "userName": "polycab@getassistive.com",
+        "password": "7242b2af69845834b9e9a2aef6bceb86",
+        "communicationEmail": "polycab.email@gmail.com",
+        "personalEmail": "polycab@getassistive.com",
+        "mobile": "8541913685",
+        "active": 1,
+        "userType": 3,
+        "defaultProjectId": 355,
+        "resetPasswordToken": null,
+        "profilePictureName": null,
+        "userProject": [
+            {
+                "id": 3841,
+                "active": 1,
+                "nodeKey": "0-3771",
+                "serialNo": null,
+                "assignedOn": 1704326400000,
+                "project": {
+                    "projectId": 355,
+                    "projectName": "Polycab Red Carpet",
+                    "projectLogoImage": "https://static.assistive.site/ap-south-1-data/355/others/2024/06/IMG_355_1718170013342_OTHERS_2024-06-12T05:26:53.342459361.png",
+                    "cmProjectType": 3,
+                    "timezone": {
+                        "id": 1,
+                        "timeZoneName": "(UTC+5:30) Indian Standard Time",
+                        "active": 1
+                    },
+                    "language": {
+                        "id": 1,
+                        "languageName": "English",
+                        "active": 1
+                    },
+                    "country": {
+                        "countryId": 1,
+                        "countryCode": "IND",
+                        "callingCode": "+91",
+                        "countryName": "India",
+                        "projectId": 67
+                    },
+                    "active": 1,
+                    "logicalName": "sys_gmail_25",
+                    "selectCarouselFlag": 1,
+                    "carouselList": null,
+                    "updatedBy": null,
+                    "createdDate": null,
+                    "allowedDaysForPointHistory": null,
+                    "otpSmsUrl": "https://api2.growwsaas.com/fe/api/v1/multiSend?username=cpgrohe.trans&password=OKZZf&unicode=false&from=PLYCAB",
+                    "otpMessage": "Dear Partner,Your OTP code is <<smsotpforuser>>. Thanks & Regards, Team Polycab Red Carpet",
+                    "sendOtpFromWhatsapp": false,
+                    "whatsappOtpUrl": null,
+                    "whatsappOtpRequest": null,
+                    "whatsappOtpUrlHeader": null,
+                    "pointsExpireInDays": null,
+                    "sendPointTransactionEmail": 0,
+                    "isSmsEnabled": 1,
+                    "otpValidityDuration": 60,
+                    "resendOtpInterval": 12,
+                    "maxSendOtpRequest": 2,
+                    "otpCountResetAfter": 120,
+                    "maxFailureAttempt": 5,
+                    "failureAttemptResetAfter": 180
+                },
+                "updatedTimestamp": 1704357329000
+            }
+        ]
+    },
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb2x5Y2FiQGdldGFzc2lzdGl2ZS5jb20iLCJhdWQiOiJhc3Npc3RpdmVfYXAiLCJzY29wZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifV0sInVzZXJJZCI6IjM3NzEiLCJ1c2VySXAiOiI0NS4yNTAuNDkuMTUwIiwidXNlckJyb3dzZXIiOiJBcGFjaGUtSHR0cENsaWVudC80LjUuMTMgKEphdmEvMTcuMC42KSIsInJlZ2lvbkNvZGUiOiJhcC1zb3V0aC0xIiwic2Vzc2lvbklkIjoiMDAwMDAxOTEtOTdkZS0xOGVlLTAwMDAtMDAwMDAwMDAwZWJiIiwibW9kdWxlVHlwZSI6MCwiZW50aXR5UmVjb3JkSWQiOjAsImlzcyI6InN5c3RlbSIsImlhdCI6MTcyNDgyOTgwMCwiZXhwIjoxNzI0ODQ3ODAwfQ.BtkKnFR9wfYcwVFL5m0MLXaakFa76w26Uj9zSinct2o",
+    "serverTimezone": "GMT",
+    "appServerUrl": "https://endpoints-backend.api.ap.assistive.site/retailitynew",
+    "userSessionId": "bA3zMlm70tob/c23aOre+A=="
+}
+Request method:	GET
+Request URI:	https://endpoints-backend.api.ap.assistive.site/retailitynew/setting/api/configuration/assistant?projectId=355
+Proxy:			<none>
+Request params:	<none>
+Query params:	projectId=355
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb2x5Y2FiQGdldGFzc2lzdGl2ZS5jb20iLCJhdWQiOiJhc3Npc3RpdmVfYXAiLCJzY29wZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifV0sInVzZXJJZCI6IjM3NzEiLCJ1c2VySXAiOiI0NS4yNTAuNDkuMTUwIiwidXNlckJyb3dzZXIiOiJBcGFjaGUtSHR0cENsaWVudC80LjUuMTMgKEphdmEvMTcuMC42KSIsInJlZ2lvbkNvZGUiOiJhcC1zb3V0aC0xIiwic2Vzc2lvbklkIjoiMDAwMDAxOTEtOTdkZS0xOGVlLTAwMDAtMDAwMDAwMDAwZWJiIiwibW9kdWxlVHlwZSI6MCwiZW50aXR5UmVjb3JkSWQiOjAsImlzcyI6InN5c3RlbSIsImlhdCI6MTcyNDgyOTgwMCwiZXhwIjoxNzI0ODQ3ODAwfQ.BtkKnFR9wfYcwVFL5m0MLXaakFa76w26Uj9zSinct2o
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Date: Wed, 28 Aug 2024 07:23:20 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Encoding: gzip
+
+{
+    "statusCode": 200,
+    "message": "SUCCESS",
+    "responseData": [
+        {
+            "menuId": 614,
+            "menuName": "Users",
+            "menuDescription": "Manage User Roles & Users",
+            "menuIcon": "fa-user-cog",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "User Roles",
+                    "menuDescription": "Manage access roles for your users",
+                    "menuIcon": null,
+                    "urlPath": "user-role/set-assist",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Add & Manage Users",
+                    "menuDescription": "Manage your team",
+                    "menuIcon": null,
+                    "urlPath": "users/set-assist",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 615,
+            "menuName": "Customers",
+            "menuDescription": "Customize fields & settings",
+            "menuIcon": "fa-building",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Customer Fields",
+                    "menuDescription": "Manage data fields",
+                    "menuIcon": null,
+                    "urlPath": "customer-settings/",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Customer Settings",
+                    "menuDescription": "General settings for organizations",
+                    "menuIcon": null,
+                    "urlPath": "general-settings/1",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 616,
+            "menuName": "Contacts",
+            "menuDescription": "Customize fields & settings",
+            "menuIcon": "fa-address-book",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Contact Fields",
+                    "menuDescription": "Manage data fields",
+                    "menuIcon": null,
+                    "urlPath": "contact-settings",
+                    "greenTick": false,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Contact Settings",
+                    "menuDescription": "General settings for contacts",
+                    "menuIcon": null,
+                    "urlPath": "general-settings/3",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 617,
+            "menuName": "Opportunities",
+            "menuDescription": "Customize fields & settings",
+            "menuIcon": "fa-money-check",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Opportunity Fields",
+                    "menuDescription": "Manage data fields",
+                    "menuIcon": null,
+                    "urlPath": "opportunity-settings",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Opportunity Settings",
+                    "menuDescription": "General settings for opportunities",
+                    "menuIcon": null,
+                    "urlPath": "general-settings/2",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 618,
+            "menuName": "Products",
+            "menuDescription": "Customize fields & settings",
+            "menuIcon": "fa-box-open",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Product Fields",
+                    "menuDescription": "Manage data fields",
+                    "menuIcon": null,
+                    "urlPath": "product-settings/set-assist/0",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Product Settings",
+                    "menuDescription": "General settings for products",
+                    "menuIcon": null,
+                    "urlPath": "product-settings/set-assist/1",
+                    "greenTick": false,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 643,
+            "menuName": "Account Setup",
+            "menuDescription": "Configure how Assistive works for you",
+            "menuIcon": "fa-cogs",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Localization",
+                    "menuDescription": "Country, timezone, currency etc.",
+                    "menuIcon": null,
+                    "urlPath": "general-settings/set-assist",
+                    "greenTick": false,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        }
+    ]
+}
+Request method:	GET
+Request URI:	https://endpoints-backend.api.ap.assistive.site/retailitynew/setting/api/configuration/assistant?projectId=355
+Proxy:			<none>
+Request params:	<none>
+Query params:	projectId=355
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb2x5Y2FiQGdldGFzc2lzdGl2ZS5jb20iLCJhdWQiOiJhc3Npc3RpdmVfYXAiLCJzY29wZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifV0sInVzZXJJZCI6IjM3NzEiLCJ1c2VySXAiOiI0NS4yNTAuNDkuMTUwIiwidXNlckJyb3dzZXIiOiJBcGFjaGUtSHR0cENsaWVudC80LjUuMTMgKEphdmEvMTcuMC42KSIsInJlZ2lvbkNvZGUiOiJhcC1zb3V0aC0xIiwic2Vzc2lvbklkIjoiMDAwMDAxOTEtOTdkZS0xOGVlLTAwMDAtMDAwMDAwMDAwZWJiIiwibW9kdWxlVHlwZSI6MCwiZW50aXR5UmVjb3JkSWQiOjAsImlzcyI6InN5c3RlbSIsImlhdCI6MTcyNDgyOTgwMCwiZXhwIjoxNzI0ODQ3ODAwfQ.BtkKnFR9wfYcwVFL5m0MLXaakFa76w26Uj9zSinct2o
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Date: Wed, 28 Aug 2024 07:40:22 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Encoding: gzip
+
+{
+    "statusCode": 200,
+    "message": "SUCCESS",
+    "responseData": [
+        {
+            "menuId": 614,
+            "menuName": "Users",
+            "menuDescription": "Manage User Roles & Users",
+            "menuIcon": "fa-user-cog",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "User Roles",
+                    "menuDescription": "Manage access roles for your users",
+                    "menuIcon": null,
+                    "urlPath": "user-role/set-assist",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Add & Manage Users",
+                    "menuDescription": "Manage your team",
+                    "menuIcon": null,
+                    "urlPath": "users/set-assist",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 615,
+            "menuName": "Customers",
+            "menuDescription": "Customize fields & settings",
+            "menuIcon": "fa-building",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Customer Fields",
+                    "menuDescription": "Manage data fields",
+                    "menuIcon": null,
+                    "urlPath": "customer-settings/",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Customer Settings",
+                    "menuDescription": "General settings for organizations",
+                    "menuIcon": null,
+                    "urlPath": "general-settings/1",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 616,
+            "menuName": "Contacts",
+            "menuDescription": "Customize fields & settings",
+            "menuIcon": "fa-address-book",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Contact Fields",
+                    "menuDescription": "Manage data fields",
+                    "menuIcon": null,
+                    "urlPath": "contact-settings",
+                    "greenTick": false,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Contact Settings",
+                    "menuDescription": "General settings for contacts",
+                    "menuIcon": null,
+                    "urlPath": "general-settings/3",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 617,
+            "menuName": "Opportunities",
+            "menuDescription": "Customize fields & settings",
+            "menuIcon": "fa-money-check",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Opportunity Fields",
+                    "menuDescription": "Manage data fields",
+                    "menuIcon": null,
+                    "urlPath": "opportunity-settings",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Opportunity Settings",
+                    "menuDescription": "General settings for opportunities",
+                    "menuIcon": null,
+                    "urlPath": "general-settings/2",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 618,
+            "menuName": "Products",
+            "menuDescription": "Customize fields & settings",
+            "menuIcon": "fa-box-open",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Product Fields",
+                    "menuDescription": "Manage data fields",
+                    "menuIcon": null,
+                    "urlPath": "product-settings/set-assist/0",
+                    "greenTick": true,
+                    "childList": [
+                        
+                    ]
+                },
+                {
+                    "menuId": null,
+                    "menuName": "Product Settings",
+                    "menuDescription": "General settings for products",
+                    "menuIcon": null,
+                    "urlPath": "product-settings/set-assist/1",
+                    "greenTick": false,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 643,
+            "menuName": "Account Setup",
+            "menuDescription": "Configure how Assistive works for you",
+            "menuIcon": "fa-cogs",
+            "urlPath": null,
+            "greenTick": false,
+            "childList": [
+                {
+                    "menuId": null,
+                    "menuName": "Localization",
+                    "menuDescription": "Country, timezone, currency etc.",
+                    "menuIcon": null,
+                    "urlPath": "general-settings/set-assist",
+                    "greenTick": false,
+                    "childList": [
+                        
+                    ]
+                }
+            ]
+        }
+    ]
+}
+Request method:	POST
+Request URI:	https://endpoints-backend.api.ap.assistive.site/retailitynew/login/api/auth/login
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "username": "polycab@getassistive.com",
+    "password": "channelplay"
+}
+HTTP/1.1 200 
+Date: Wed, 28 Aug 2024 07:40:22 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Encoding: gzip
+
+{
+    "user": {
+        "userId": 3771,
+        "userCode": 1003533,
+        "firstName": "Polycab",
+        "middleName": null,
+        "lastName": "Admin",
+        "userName": "polycab@getassistive.com",
+        "password": "7242b2af69845834b9e9a2aef6bceb86",
+        "communicationEmail": "polycab.email@gmail.com",
+        "personalEmail": "polycab@getassistive.com",
+        "mobile": "8541913685",
+        "active": 1,
+        "userType": 3,
+        "defaultProjectId": 355,
+        "resetPasswordToken": null,
+        "profilePictureName": null,
+        "userProject": [
+            {
+                "id": 3841,
+                "active": 1,
+                "nodeKey": "0-3771",
+                "serialNo": null,
+                "assignedOn": 1704326400000,
+                "project": {
+                    "projectId": 355,
+                    "projectName": "Polycab Red Carpet",
+                    "projectLogoImage": "https://static.assistive.site/ap-south-1-data/355/others/2024/06/IMG_355_1718170013342_OTHERS_2024-06-12T05:26:53.342459361.png",
+                    "cmProjectType": 3,
+                    "timezone": {
+                        "id": 1,
+                        "timeZoneName": "(UTC+5:30) Indian Standard Time",
+                        "active": 1
+                    },
+                    "language": {
+                        "id": 1,
+                        "languageName": "English",
+                        "active": 1
+                    },
+                    "country": {
+                        "countryId": 1,
+                        "countryCode": "IND",
+                        "callingCode": "+91",
+                        "countryName": "India",
+                        "projectId": 67
+                    },
+                    "active": 1,
+                    "logicalName": "sys_gmail_25",
+                    "selectCarouselFlag": 1,
+                    "carouselList": null,
+                    "updatedBy": null,
+                    "createdDate": null,
+                    "allowedDaysForPointHistory": null,
+                    "otpSmsUrl": "https://api2.growwsaas.com/fe/api/v1/multiSend?username=cpgrohe.trans&password=OKZZf&unicode=false&from=PLYCAB",
+                    "otpMessage": "Dear Partner,Your OTP code is <<smsotpforuser>>. Thanks & Regards, Team Polycab Red Carpet",
+                    "sendOtpFromWhatsapp": false,
+                    "whatsappOtpUrl": null,
+                    "whatsappOtpRequest": null,
+                    "whatsappOtpUrlHeader": null,
+                    "pointsExpireInDays": null,
+                    "sendPointTransactionEmail": 0,
+                    "isSmsEnabled": 1,
+                    "otpValidityDuration": 60,
+                    "resendOtpInterval": 12,
+                    "maxSendOtpRequest": 2,
+                    "otpCountResetAfter": 120,
+                    "maxFailureAttempt": 5,
+                    "failureAttemptResetAfter": 180
+                },
+                "updatedTimestamp": 1704357329000
+            }
+        ]
+    },
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb2x5Y2FiQGdldGFzc2lzdGl2ZS5jb20iLCJhdWQiOiJhc3Npc3RpdmVfYXAiLCJzY29wZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifV0sInVzZXJJZCI6IjM3NzEiLCJ1c2VySXAiOiI0NS4yNTAuNDkuMTUwIiwidXNlckJyb3dzZXIiOiJBcGFjaGUtSHR0cENsaWVudC80LjUuMTMgKEphdmEvMTcuMC42KSIsInJlZ2lvbkNvZGUiOiJhcC1zb3V0aC0xIiwic2Vzc2lvbklkIjoiMDAwMDAxOTEtOTdlZC1iMGNmLTAwMDAtMDAwMDAwMDAwZWJiIiwibW9kdWxlVHlwZSI6MCwiZW50aXR5UmVjb3JkSWQiOjAsImlzcyI6InN5c3RlbSIsImlhdCI6MTcyNDgzMDgyMiwiZXhwIjoxNzI0ODQ4ODIyfQ.BxhXik0aVhlP605DjQNxVgphkPpEDeEeUgwa_rbBGIo",
+    "serverTimezone": "GMT",
+    "appServerUrl": "https://endpoints-backend.api.ap.assistive.site/retailitynew",
+    "userSessionId": "MUeFXrqTUe3R/z+tZ4sf2A=="
+}
+Request method:	POST
+Request URI:	https://endpoints-backend.api.ap.assistive.site/retailitynew/login/api/auth/login
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "username": "polycab@getassistive.com",
+    "password": "channelplay"
+}
+HTTP/1.1 200 
+Date: Wed, 28 Aug 2024 07:40:22 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: origin,access-control-request-method,access-control-request-headers,accept-encoding
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Encoding: gzip
+
+{
+    "user": {
+        "userId": 3771,
+        "userCode": 1003533,
+        "firstName": "Polycab",
+        "middleName": null,
+        "lastName": "Admin",
+        "userName": "polycab@getassistive.com",
+        "password": "7242b2af69845834b9e9a2aef6bceb86",
+        "communicationEmail": "polycab.email@gmail.com",
+        "personalEmail": "polycab@getassistive.com",
+        "mobile": "8541913685",
+        "active": 1,
+        "userType": 3,
+        "defaultProjectId": 355,
+        "resetPasswordToken": null,
+        "profilePictureName": null,
+        "userProject": [
+            {
+                "id": 3841,
+                "active": 1,
+                "nodeKey": "0-3771",
+                "serialNo": null,
+                "assignedOn": 1704326400000,
+                "project": {
+                    "projectId": 355,
+                    "projectName": "Polycab Red Carpet",
+                    "projectLogoImage": "https://static.assistive.site/ap-south-1-data/355/others/2024/06/IMG_355_1718170013342_OTHERS_2024-06-12T05:26:53.342459361.png",
+                    "cmProjectType": 3,
+                    "timezone": {
+                        "id": 1,
+                        "timeZoneName": "(UTC+5:30) Indian Standard Time",
+                        "active": 1
+                    },
+                    "language": {
+                        "id": 1,
+                        "languageName": "English",
+                        "active": 1
+                    },
+                    "country": {
+                        "countryId": 1,
+                        "countryCode": "IND",
+                        "callingCode": "+91",
+                        "countryName": "India",
+                        "projectId": 67
+                    },
+                    "active": 1,
+                    "logicalName": "sys_gmail_25",
+                    "selectCarouselFlag": 1,
+                    "carouselList": null,
+                    "updatedBy": null,
+                    "createdDate": null,
+                    "allowedDaysForPointHistory": null,
+                    "otpSmsUrl": "https://api2.growwsaas.com/fe/api/v1/multiSend?username=cpgrohe.trans&password=OKZZf&unicode=false&from=PLYCAB",
+                    "otpMessage": "Dear Partner,Your OTP code is <<smsotpforuser>>. Thanks & Regards, Team Polycab Red Carpet",
+                    "sendOtpFromWhatsapp": false,
+                    "whatsappOtpUrl": null,
+                    "whatsappOtpRequest": null,
+                    "whatsappOtpUrlHeader": null,
+                    "pointsExpireInDays": null,
+                    "sendPointTransactionEmail": 0,
+                    "isSmsEnabled": 1,
+                    "otpValidityDuration": 60,
+                    "resendOtpInterval": 12,
+                    "maxSendOtpRequest": 2,
+                    "otpCountResetAfter": 120,
+                    "maxFailureAttempt": 5,
+                    "failureAttemptResetAfter": 180
+                },
+                "updatedTimestamp": 1704357329000
+            }
+        ]
+    },
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwb2x5Y2FiQGdldGFzc2lzdGl2ZS5jb20iLCJhdWQiOiJhc3Npc3RpdmVfYXAiLCJzY29wZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifV0sInVzZXJJZCI6IjM3NzEiLCJ1c2VySXAiOiI0NS4yNTAuNDkuMTUwIiwidXNlckJyb3dzZXIiOiJBcGFjaGUtSHR0cENsaWVudC80LjUuMTMgKEphdmEvMTcuMC42KSIsInJlZ2lvbkNvZGUiOiJhcC1zb3V0aC0xIiwic2Vzc2lvbklkIjoiMDAwMDAxOTEtOTdlZC1iMWU3LTAwMDAtMDAwMDAwMDAwZWJiIiwibW9kdWxlVHlwZSI6MCwiZW50aXR5UmVjb3JkSWQiOjAsImlzcyI6InN5c3RlbSIsImlhdCI6MTcyNDgzMDgyMiwiZXhwIjoxNzI0ODQ4ODIyfQ.RgZ2ZGGQP09kMwcQ_sodBJo-797WgETCUl7wGE0vsYw",
+    "serverTimezone": "GMT",
+    "appServerUrl": "https://endpoints-backend.api.ap.assistive.site/retailitynew",
+    "userSessionId": "1FK3wmAB3wZ3hjhvRx7u3Q=="
 }

@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Test set: cucumber.Options.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1030 s <<< FAILURE! -- in cucumber.Options.TestRunner
+Validate login functionality VAPT testing for portal. Check Secure Session Management and Authentication Mechanisms.Manual Logout and Session Expiration -- Time elapsed: 1.439 s <<< FAILURE!
+java.lang.AssertionError: expected:<200> but was:<401>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:633)
+	at stepDefinitions.Portal.PortalLoginVAPTSteps.verifyIfUserAbleToSubmitAPIWithSameTokenSession(PortalLoginVAPTSteps.java:44)
+	at stepDefinitions.Portal.PortalLoginVAPTSteps.validateUsersShouldNotBeAbleToUseTheExpiredTokenToAccessTheSystem(PortalLoginVAPTSteps.java:75)
+	at ✽.validate users should not be able to use the expired token to access the system(file:///C:/Users/Soumya/Documents/GitHub/Git%20local%20API/RestAssured_Polycab/RestAssured_Polycab/src/test/java/features/Portal/Portal_LoginVAPT.feature:14)
+
+Validate login functionality VAPT testing for portal. Check Secure Session Management and Authentication Mechanisms.Inactivity-based Session Expiration -- Time elapsed: 1022 s <<< FAILURE!
+java.lang.AssertionError: expected:<Unauthorized> but was:<null>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at stepDefinitions.Portal.PortalLoginVAPTSteps.validateSessionShouldExpireAfterMinutesOfInactivity(PortalLoginVAPTSteps.java:94)
+	at ✽.validate session should expire after 15 minutes of inactivity(file:///C:/Users/Soumya/Documents/GitHub/Git%20local%20API/RestAssured_Polycab/RestAssured_Polycab/src/test/java/features/Portal/Portal_LoginVAPT.feature:21)
+

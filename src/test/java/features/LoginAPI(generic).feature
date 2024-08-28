@@ -7,4 +7,4 @@ Feature: This is generic Login api feature which can be used for all other APIs 
 
 
   Scenario:
-    When user submit "request_login_otp" with "POST" request for Applogin
+    When user submit "request_login_otp" with "POST" request for App-login

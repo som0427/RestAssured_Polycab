@@ -32,7 +32,7 @@ public class LoginApiSteps extends CommonUtils {
     }
 
     @When("user submit {string} with {string} request for login")
-    public void userSubmitWithPOSTRequestForLogin(String endpoint, String POST) throws FileNotFoundException {
+    public void userSubmitWithPOSTRequestForLogin(String endpoint, String POST) {
 
         reqspec = given().spec(commonUtils.requestSpec()).body(payload.loginPayload());
         respec = responseSpec();
@@ -43,8 +43,8 @@ public class LoginApiSteps extends CommonUtils {
         getApiResponseObject.setResponse(response);
     }
 
-    @When("user submit {string} with {string} request for Applogin")
-    public void userSubmitWithRequestForApplogin(String endpoint, String POST) throws FileNotFoundException {
+    @When("user submit {string} with {string} request for App-login")
+    public void userSubmitWithRequestForApplogin(String endpoint, String httpMethod) {
         reqspec = given().spec(commonUtils.requestSpec()).body(payload.loginMobilegetOTPPayload());
         respec = responseSpec();
         ep = Endpoints.valueOf(endpoint);

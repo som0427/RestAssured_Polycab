@@ -2,6 +2,7 @@ package resources.testUtils;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.filter.log.LogDetail;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
@@ -40,12 +41,16 @@ public class CommonUtils {
     }
 
 
-    public RequestSpecification requestSpec() throws FileNotFoundException {
+    public RequestSpecification requestSpec() {
         if (commonRequest == null) {
-            logStream = new PrintStream(new FileOutputStream("logging.txt"));
+            try {
+                logStream = new PrintStream(new FileOutputStream("logging.txt"));
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException("Logging file could not be created",e);
+            }
             commonRequest = new RequestSpecBuilder().setBaseUri(GetProperty.value("baseurl"))
                     .addFilter(RequestLoggingFilter.logRequestTo(logStream))
-                    .addFilter(ResponseLoggingFilter.logResponseTo(logStream))
+                    .addFilter(new ResponseLoggingFilter(LogDetail.ALL, logStream)) //Log all response details to file
                     .setContentType(ContentType.JSON).build();
             return commonRequest;
         }
@@ -98,7 +103,7 @@ public class CommonUtils {
 
 
 //    ** method for validate success in ResponseBody
-    public void validateSuccessInResponseBody(String keyCode, String expCode, String responseBody) {
+    public void validateDataInResponseBody(String keyCode, String expCode, String responseBody) {
         JsonPath js = new JsonPath(responseBody);
         assertEquals(js.getString(keyCode), expCode);
     }
@@ -109,13 +114,16 @@ public class CommonUtils {
         return js.get(key);
     }
 
-    public void sleepInMinutes(long minutes) {
-        long milliseconds = minutes * 60 * 1000;
+    public void sleepInSeconds(long seconds) {
+        if (seconds < 0 || seconds > Long.MAX_VALUE / 1000) {
+            throw new IllegalArgumentException("Seconds value is too large or negative.");
+        }
+        long milliseconds = seconds * 1000;
         try {
             Thread.sleep(milliseconds);
         } catch (InterruptedException e) {
-
             e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
     }
 

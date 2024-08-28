@@ -19,8 +19,8 @@
         <cucumber.java.version>7.18.0</cucumber.java.version>
         <cucumber.junit.version>7.18.0</cucumber.junit.version>
         <selenium.version>4.18.1</selenium.version>
-        <rest-assured.version>5.4.0</rest-assured.version>
-        <json-path.version>5.4.0</json-path.version>
+        <rest-assured.version>5.5.0</rest-assured.version>
+        <json-path.version>5.5.0</json-path.version>
         <json.version>20240303</json.version>
         <jackson-databind.version>2.17.1</jackson-databind.version>
         <hamcrest.version>2.2</hamcrest.version>

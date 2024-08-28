@@ -1,4 +1,4 @@
-package stepDefinitions;
+package stepDefinitions.Portal;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -18,7 +18,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class SettingsPortalSteps extends CommonUtils {
+public class PortalSettingsSteps extends CommonUtils {
     RequestSpecification reqspec;
     ResponseSpecification respec;
     Response response;
@@ -26,13 +26,13 @@ public class SettingsPortalSteps extends CommonUtils {
     String bearerToken;
     private final GetApiResponseObject getApiResponseObject;
     private final CommonUtils commonUtils = CommonUtils.getInstance();
-    public SettingsPortalSteps() {
+    public PortalSettingsSteps() {
         this.getApiResponseObject = GetApiResponseObject.getInstance();
         CommonUtils.getInstance();
     }
 
     @Then("add request for getAllAttributeTypes")
-    public void addRequestForGetAllAttributeTypes() throws FileNotFoundException {
+    public void addRequestForGetAllAttributeTypes() {
         response = getApiResponseObject.getResponse();
         bearerToken = getTokenFromResponse(response);
         reqspec = given().spec(commonUtils.requestSpec()).queryParam("moduleType", 2);
@@ -69,13 +69,13 @@ public class SettingsPortalSteps extends CommonUtils {
     }
 
     @Then("add request for getFieldVisibilitySettings")
-    public void addRequestForGetFieldVisibilitySettings() throws FileNotFoundException {
+    public void addRequestForGetFieldVisibilitySettings() {
         reqspec = given().spec(commonUtils.requestSpec()).queryParam("projectId", GetProperty.value("projectId"))
                 .queryParam("moduleType", 2).queryParam("filterByRole", false);
     }
 
     @Then("add request for getFieldsInSetting")
-    public void addRequestForGetFieldsInSetting() throws FileNotFoundException {
+    public void addRequestForGetFieldsInSetting() {
         reqspec = given().spec(commonUtils.requestSpec()).queryParam("moduleType", 2)
                 .queryParam("projectId", GetProperty.value("projectId"));
     }

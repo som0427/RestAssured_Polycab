@@ -1,4 +1,4 @@
-#@settingsPortal
+@settingsPortal
 Feature: Functionality of portal Settings and sub Settings modules for Polycab
 
 

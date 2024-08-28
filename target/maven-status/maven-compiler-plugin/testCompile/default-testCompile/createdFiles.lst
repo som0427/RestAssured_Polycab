@@ -1,0 +1,11 @@
+resources\testUtils\Endpoints.class
+stepDefinitions\Portal\PortalLoginVAPTSteps.class
+stepDefinitions\Portal\PortalSettingsSteps.class
+resources\testUtils\GetApiResponseObject.class
+stepDefinitions\CommonStepDefinitions.class
+stepDefinitions\Mobile_App\AppLoginMobileVAPT.class
+resources\testUtils\CommonUtils.class
+stepDefinitions\LoginApiSteps.class
+stepDefinitions\Portal\PortalLoginSteps.class
+resources\payload\Login_Payload.class
+cucumber\Options\TestRunner.class

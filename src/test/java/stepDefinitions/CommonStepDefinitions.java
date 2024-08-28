@@ -40,7 +40,7 @@ public class CommonStepDefinitions {
     @And("validate {string} is {string} in responseBody")
     public void validateIsInResponseBody(String keyValue, String expValue) {
         Response response = getApiResponseObject.getResponse();
-        commonUtils.validateSuccessInResponseBody(keyValue, expValue, response.asString());
+        commonUtils.validateDataInResponseBody(keyValue, expValue, response.asString());
     }
 
 }
