@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         tags = "@login",
         dryRun = false,
         plugin = {"pretty", "rerun:target/rerun.txt", "timeline:target/timeline",
-                "html:target/htmlReports/cucumber-reports", "json:target/jsonReports/cucumber-reports.json"},
+                "html:target/htmlReports/cucumber-reports.html", "json:target/jsonReports/cucumber-reports.json"},
         monochrome=true
 )
 public class TestRunner {

@@ -1,9 +1,10 @@
 @login
-@loginPortalVAPT B2B-2277
+@PortalLoginVAPT
+#B2B-2277
 Feature: Validate login functionality VAPT testing for portal. Check Secure Session Management and Authentication Mechanisms
 
 
-@loginPortalVAPTsc1
+@PortalLoginVAPTsc1
   Scenario: Manual Logout and Session Expiration
 
     Given user submit "loginAPI" with "POST" request for login
@@ -14,7 +15,7 @@ Feature: Validate login functionality VAPT testing for portal. Check Secure Sess
     Then validate users should not be able to use the expired token to access the system
 
 
-@loginPortalVAPTsc2
+@PortalLoginVAPTsc2
   Scenario: Inactivity-based Session Expiration
 
     Given user submit "loginAPI" with "POST" request for login
@@ -22,13 +23,13 @@ Feature: Validate login functionality VAPT testing for portal. Check Secure Sess
     Then validate users should be automatically logged out after the session expires due to inactivity
 
 
-@loginPortalVAPTsc3
+@PortalLoginVAPTsc3
   Scenario: Rate Limiting and Account Lockout
 
     Given user submit "loginAPI" with "POST" request for login
 
 
-@loginPortalVAPTsc4
+@PortalLoginVAPTsc4
   Scenario: Consistent Error Messaging
 
     Given user submit "loginAPI" with "POST" request for login
