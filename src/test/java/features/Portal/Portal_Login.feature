@@ -1,8 +1,8 @@
 @login
-@loginPortal
+@PortalLogin
 Feature: Validate login API for Portal and assigned webMenus after login
 
-  @loginPortalsc1
+  @PortalLoginsc1
   Scenario Outline: submit login api and verify whether login is successful
 
     Given add loginAPI payload with "username" and "password"
@@ -18,7 +18,7 @@ Feature: Validate login API for Portal and assigned webMenus after login
       |   355   |Polycab Red Carpet|
 
 
-  @loginPortalsc2
+  @PortalLoginsc2
   Scenario Outline: validate assigned web menus after login is successful
 
     Given add loginAPI payload with "username" and "password"

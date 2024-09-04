@@ -27,9 +27,11 @@ public class PortalLoginSteps extends CommonUtils {
     Login_Payload payload = new Login_Payload();
     int noOfAssignedProjects;
     private final GetApiResponseObject getApiResponseObject;
+    private final CommonUtils commonUtils = CommonUtils.getInstance();
 
     public PortalLoginSteps() {
         this.getApiResponseObject = GetApiResponseObject.getInstance();
+        CommonUtils.getInstance();
     }
 
     //1st Scenario
@@ -38,7 +40,7 @@ public class PortalLoginSteps extends CommonUtils {
         username = GetProperty.value("login_username");
         password = GetProperty.value("login_password");
         String login_Payload = String.format("{ \"username\": \"%s\", \"password\": \"%s\" }", username, password);
-        reqspec = given().spec(requestSpec()).body(login_Payload);
+        reqspec = given().spec(commonUtils.requestSpec("loginAPI")).body(login_Payload);
         respec = responseSpec();
     }
 
@@ -60,7 +62,6 @@ public class PortalLoginSteps extends CommonUtils {
     @Then("{string} is validated")
     public void isValidated(String project_id) {
         loginResponse = response.asString();
-        System.out.println(loginResponse + "-------------------------response-----------");
         json = new JsonPath(loginResponse);
         int projectId = json.getInt("user.userProject[0].project.projectId");
         Assert.assertEquals(project_id, String.valueOf(projectId));

@@ -35,7 +35,7 @@ public class PortalSettingsSteps extends CommonUtils {
     public void addRequestForGetAllAttributeTypes() {
         response = getApiResponseObject.getResponse();
         bearerToken = getTokenFromResponse(response);
-        reqspec = given().spec(commonUtils.requestSpec()).queryParam("moduleType", 2);
+        reqspec = given().spec(commonUtils.requestSpec("getAllAttributeTypes")).queryParam("moduleType", 2);
         respec = responseSpec();
     }
 
@@ -70,13 +70,13 @@ public class PortalSettingsSteps extends CommonUtils {
 
     @Then("add request for getFieldVisibilitySettings")
     public void addRequestForGetFieldVisibilitySettings() {
-        reqspec = given().spec(commonUtils.requestSpec()).queryParam("projectId", GetProperty.value("projectId"))
+        reqspec = given().spec(commonUtils.requestSpec("getFieldVisibilitySettings")).queryParam("projectId", GetProperty.value("projectId"))
                 .queryParam("moduleType", 2).queryParam("filterByRole", false);
     }
 
     @Then("add request for getFieldsInSetting")
     public void addRequestForGetFieldsInSetting() {
-        reqspec = given().spec(commonUtils.requestSpec()).queryParam("moduleType", 2)
+        reqspec = given().spec(commonUtils.requestSpec("getFieldsInSetting")).queryParam("moduleType", 2)
                 .queryParam("projectId", GetProperty.value("projectId"));
     }
 

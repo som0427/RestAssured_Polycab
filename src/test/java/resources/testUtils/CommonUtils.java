@@ -10,25 +10,33 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import utilities.GetProperty;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.Matchers.lessThan;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CommonUtils {
-    RequestSpecification commonRequest;      //RequestSpecification is return type
+    RequestSpecification commonRequest;
     ResponseSpecification commonResponse;
     Response response;
     PrintStream logStream;
     private static CommonUtils instance = null;
     private final GetApiResponseObject getApiResponseObject;
+    private String sessionToken;
+    private static final Logger Log = LoggerFactory.getLogger(CommonUtils.class);
 
 
-    // CommonUtils instance object created to concatenate all API logs in logging.txt when a step involves multiple API calls.
+    // CommonUtils instance object created to concatenate all API logs in APITrace_logstream.txt when a step involves multiple API calls.
     public static synchronized CommonUtils getInstance() {
         if (instance == null) {
             instance = new CommonUtils();
@@ -38,13 +46,17 @@ public class CommonUtils {
 
     public CommonUtils() {
         this.getApiResponseObject = GetApiResponseObject.getInstance();
+        this.sessionToken = sessionToken;
     }
 
 
-    public RequestSpecification requestSpec() {
+
+//    ** method for RequestSpecification
+    public RequestSpecification requestSpec(String scenarioInfo) {
         if (commonRequest == null) {
             try {
-                logStream = new PrintStream(new FileOutputStream("logging.txt"));
+                logStream = new PrintStream(new FileOutputStream("API_logstream.txt"));
+                logStream.println("INFO: Starting API requests for: " + scenarioInfo);
             } catch (FileNotFoundException e) {
                 throw new RuntimeException("Logging file could not be created",e);
             }
@@ -54,10 +66,14 @@ public class CommonUtils {
                     .setContentType(ContentType.JSON).build();
             return commonRequest;
         }
+        else {
+            logStream.println("INFO: Continuing API requests for: " + scenarioInfo);
+        }
         return commonRequest;
     }
 
 
+//    ** method for ResponseSpecification
     public ResponseSpecification responseSpec() {
         commonResponse = new ResponseSpecBuilder().expectStatusCode(200)
                 .expectResponseTime(lessThan(5000L)).expectContentType(ContentType.JSON).build();
@@ -91,6 +107,7 @@ public class CommonUtils {
         }
     }
 
+
 //    ** method for get Token from loginOTP APi Response for mobile App
     public String getOTPtokenFromResponse(Response response) {
         if (response != null) {
@@ -109,11 +126,22 @@ public class CommonUtils {
     }
 
 
+//    ** method for validate success in ResponseBody with partial string match
+    public void validatePartialDataInResponseBody(String keyCode, String expPartialText, String responseBody) {
+        JsonPath js = new JsonPath(responseBody);
+        String partialText = js.get(keyCode);
+        assertTrue(partialText.contains(expPartialText));
+    }
+
+
+//    ** method for getJsonPath
     public <T> T getJsonPath(String response, String key) {
         JsonPath js = new JsonPath(response);
         return js.get(key);
     }
 
+
+//    ** method for sleep
     public void sleepInSeconds(long seconds) {
         if (seconds < 0 || seconds > Long.MAX_VALUE / 1000) {
             throw new IllegalArgumentException("Seconds value is too large or negative.");
@@ -126,5 +154,49 @@ public class CommonUtils {
             Thread.currentThread().interrupt();
         }
     }
+
+//    sessionTimeout() method actively checks the session every minute, useful if the session to expire before scheduled time.
+//    currently not in use as only one scenario required to handle session.
+    public void sessionTimeout() {
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+
+        Runnable checkSession = () -> {
+            boolean sessionValid = checkSessionStatus();    // Check if the session is still valid
+            if (!sessionValid) {
+                scheduler.shutdown();   //Stop further scheduling if the session has expired
+            }
+        };
+
+        scheduler.scheduleAtFixedRate(checkSession, 0, 1, TimeUnit.MINUTES);
+
+        try {
+            if (!scheduler.awaitTermination(60, TimeUnit.MINUTES)) {
+                scheduler.shutdownNow(); // Force shutdown if not terminated
+            }
+        } catch (InterruptedException e) {
+            scheduler.shutdownNow(); // Handle interruption by shutting down immediately
+            Thread.currentThread().interrupt(); // Restore interrupted status
+            throw new RuntimeException(e);
+        }
+    }
+    public boolean checkSessionStatus() {
+        response = getApiResponseObject.getResponse();
+        int statusCode = response.getStatusCode();
+
+        // Check the response status code to determine if the session is still valid
+        if (statusCode == 200) {
+            System.out.println("Session is still valid.");
+            return true;
+        }
+        else if (statusCode == 401) {
+            System.out.println("Session has expired.");
+            return false;
+        }
+        else {
+            System.out.println("Unexpected status code: " +statusCode);
+            return false;
+        }
+    }
+
 
 }

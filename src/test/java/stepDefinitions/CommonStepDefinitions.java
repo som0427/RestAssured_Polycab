@@ -2,14 +2,9 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import resources.testUtils.CommonUtils;
 import resources.testUtils.GetApiResponseObject;
-
-import static org.junit.Assert.assertEquals;
 
 public class CommonStepDefinitions {
 
@@ -41,6 +36,14 @@ public class CommonStepDefinitions {
     public void validateIsInResponseBody(String keyValue, String expValue) {
         Response response = getApiResponseObject.getResponse();
         commonUtils.validateDataInResponseBody(keyValue, expValue, response.asString());
+    }
+
+
+    //    gherkin: validate ApiResponseBody partial text parameter
+    @And("validate {string} contains partialText {string} in responseBody")
+    public void validateContainsPartialTextInResponseBody(String keyValue, String expParialValue) {
+        Response response = getApiResponseObject.getResponse();
+        commonUtils.validatePartialDataInResponseBody(keyValue, expParialValue, response.asString());
     }
 
 }

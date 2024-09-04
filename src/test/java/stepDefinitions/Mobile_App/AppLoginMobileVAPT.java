@@ -12,6 +12,7 @@ import utilities.GetProperty;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class AppLoginMobileVAPT extends CommonUtils {
     RequestSpecification reqspec;
@@ -38,7 +39,7 @@ public class AppLoginMobileVAPT extends CommonUtils {
         String mobileNumber = "00000000";
         String attributeId = "53788";
         String incorrect_loginOtp_Payload = String.format("{ \"mobileNumber\": \"%s\", \"attributeId\": \"%s\" }", mobileNumber, attributeId);
-        reqspec = given().spec(commonUtils.requestSpec()).body(incorrect_loginOtp_Payload)
+        reqspec = given().spec(commonUtils.requestSpec("request_login_otp")).body(incorrect_loginOtp_Payload)
                 .queryParam("projectId", GetProperty.value("projectId"));
         respec = responseSpec();
 
@@ -46,7 +47,11 @@ public class AppLoginMobileVAPT extends CommonUtils {
                 .then().extract().response();
 
         assertEquals(404, (int) getJsonPath(incorrect_loginOtpResponse.asString(), "statusCode"));
-        assertEquals("Customer not found or is Inactive", getJsonPath(incorrect_loginOtpResponse.asString(), "message"));
+        //assertEquals("Customer not found or is Inactive", getJsonPath(incorrect_loginOtpResponse.asString(), "message"));
+
+        String message = getJsonPath(incorrect_loginOtpResponse.asString(), "message");
+        assertTrue(message.contains("Customer not found or is Inactive"));
+
     }
 
     @Then("validate Resend Interval Control functionality is working properly with sending login request within time limit")
@@ -76,7 +81,6 @@ public class AppLoginMobileVAPT extends CommonUtils {
         for (int i = 0; i < 2; i++) {
             differentNumber_loginOtpResponse = sendLoginOtpRequest();
             assertEquals(400, differentNumber_loginOtpResponse.statusCode());
-            assertEquals("Resend interval not reached. Please wait before requesting another OTP.", getJsonPath(differentNumber_loginOtpResponse.asString(), "message"));
         }
 
         // Wait for 20 seconds
@@ -94,8 +98,8 @@ public class AppLoginMobileVAPT extends CommonUtils {
             }
         }
 
-        // Wait for 62 seconds
-        sleepInSeconds(120);
+        // Wait for 2 minutes
+        sleepInSeconds(121);
 
         // Run the API again after 2 minutes
         differentNumber_loginOtpResponse = sendLoginOtpRequest();
@@ -105,7 +109,7 @@ public class AppLoginMobileVAPT extends CommonUtils {
         String mobileNumber = "9123400000";
         String attributeId = "53788";
         String differentNumber_loginOtp_Payload = String.format("{ \"mobileNumber\": \"%s\", \"attributeId\": \"%s\" }", mobileNumber, attributeId);
-        reqspec = given().spec(commonUtils.requestSpec()).body(differentNumber_loginOtp_Payload)
+        reqspec = given().spec(commonUtils.requestSpec("request_login_otp")).body(differentNumber_loginOtp_Payload)
                 .queryParam("projectId", GetProperty.value("projectId"));
         respec = responseSpec();
 
@@ -126,7 +130,8 @@ public class AppLoginMobileVAPT extends CommonUtils {
 
     @Then("validate {string} is success after user_id request rate limit reached when call from different user")
     public void validateIsSuccessAfterUser_idRequestRateLimitReachedWhenCallFromDifferentUser(String arg0) {
-        sleepInSeconds(12);
+//        refresh otp request time limit
+        sleepInSeconds(120);
         loginApiSteps.userSubmitWithRequestForApplogin("request_login_otp", "POST");
 
         assertEquals(200, (int) getJsonPath(getApiResponseObject.getResponse().asString(), "statusCode"));

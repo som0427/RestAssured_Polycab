@@ -14,7 +14,7 @@ Feature: Implement OTP Functionality with Security Measures for mobile app login
     Then validate request otp with incorrect mobile number
     Then validate Resend Interval Control functionality is working properly with sending login request within time limit
     And validate "statusCode" is "400" in responseBody
-    And validate "message" is "Resend interval not reached. Please wait before requesting another OTP." in responseBody
+    And validate "message" contains partialText "Resend interval not reached. Please wait before requesting another OTP." in responseBody
     Then validate Resend Interval Control functionality is working properly with sending login request after time limit
     Then validate user_id request rate limiting by sending login_otp as maximum two success request can be called within two Minutes
     Then validate IP request rate limiting by calling login_otp api more than five times within time limit

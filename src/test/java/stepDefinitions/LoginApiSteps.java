@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -11,7 +10,6 @@ import resources.testUtils.Endpoints;
 import resources.testUtils.GetApiResponseObject;
 import utilities.GetProperty;
 
-import java.io.FileNotFoundException;
 import static io.restassured.RestAssured.given;
 public class LoginApiSteps extends CommonUtils {
 
@@ -21,6 +19,7 @@ public class LoginApiSteps extends CommonUtils {
     Endpoints ep;
     private final GetApiResponseObject getApiResponseObject;
     Login_Payload payload = new Login_Payload();
+
 
     //This will ensure single CommonUtils instance will be created throughout the execution.
     //Calling getInstance() ensures you are interacting with that single shared instance.
@@ -34,7 +33,7 @@ public class LoginApiSteps extends CommonUtils {
     @When("user submit {string} with {string} request for login")
     public void userSubmitWithPOSTRequestForLogin(String endpoint, String POST) {
 
-        reqspec = given().spec(commonUtils.requestSpec()).body(payload.loginPayload());
+        reqspec = given().spec(commonUtils.requestSpec("loginAPI")).body(payload.loginPayload());
         respec = responseSpec();
         ep = Endpoints.valueOf(endpoint);
 
@@ -45,7 +44,7 @@ public class LoginApiSteps extends CommonUtils {
 
     @When("user submit {string} with {string} request for App-login")
     public void userSubmitWithRequestForApplogin(String endpoint, String httpMethod) {
-        reqspec = given().spec(commonUtils.requestSpec()).body(payload.loginMobilegetOTPPayload());
+        reqspec = given().spec(commonUtils.requestSpec("request_login_otp")).body(payload.loginMobilegetOTPPayload());
         respec = responseSpec();
         ep = Endpoints.valueOf(endpoint);
 
